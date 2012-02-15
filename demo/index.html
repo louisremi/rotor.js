@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ʀoToᴙ.js: rotate3d manipulation library - lightweight and extensible</title>
+<meta charset="UTF-8" />
+<style>
+	body {
+		font-family: Arial, Helvetica, Liberation Sans, sans-serif;
+		background: #eee;
+		color: #333;
+		margin: 0;
+		padding: 0;
+	}
+	
+	#main {
+		width: 720px;
+		margin: 0 auto;
+	}
+	
+	#menu {
+		clear: left;
+		padding: 0;
+	}
+	
+	#menu li {
+		display: inline-block;
+		background: #333;
+		color: #eee;
+		border-radius: 3px;
+		padding: 3px;
+		width: 140px;
+		margin: 0 15px;
+		text-align: center;
+		box-shadow: 1px 1px 2px #999;
+	}
+	
+	#menu a {
+		color: #eee;
+		text-decoration: none
+	}
+
+	.cube {
+		float: left;
+		width: 60px;
+		height: 60px;
+		margin: 60px;
+		cursor: pointer;
+
+		-moz-transform-style: preserve-3d;
+		-webkit-transform-style: preserve-3d;
+		-ms-transform-style: preserve-3d;
+		-o-transform-style: preserve-3d;
+	}
+	.face {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		outline: 1px solid #666;
+
+		-moz-backface-visibility: hidden;
+		-webkit-backface-visibility: hidden;
+		-ms-backface-visibility: hidden;
+		-o-backface-visibility: hidden;
+	}
+	
+	.f0 {
+		background: #8686bf;
+		-moz-transform: rotateY(-90deg) translateZ(30px);
+		-webkit-transform: rotateY(-90deg) translateZ(30px);
+		-ms-transform: rotateY(-90deg) translateZ(30px);
+		-o-transform: rotateY(-90deg) translateZ(30px);
+	}
+	.f1 {
+		background: #bf86be;
+		-moz-transform: translateZ(30px);
+		-webkit-transform: translateZ(30px);
+		-ms-transform: translateZ(30px);
+		-o-transform: translateZ(30px);
+	}
+	.f2 {
+		background: #bf8686;
+		-moz-transform: rotateY(90deg) translateZ(30px);
+		-webkit-transform: rotateY(90deg) translateZ(30px);
+		-ms-transform: rotateY(90deg) translateZ(30px);
+		-o-transform: rotateY(90deg) translateZ(30px);
+	}
+	.f3 {
+		background: #bfbd86;
+		-moz-transform: rotateY(180deg) translateZ(30px);
+		-webkit-transform: rotateY(180deg) translateZ(30px);
+		-ms-transform: rotateY(180deg) translateZ(30px);
+		-o-transform: rotateY(180deg) translateZ(30px);
+	}
+	.f4 {
+		background: #89bf86;
+		-moz-transform: rotateX(90deg) translateZ(30px);
+		-webkit-transform: rotateX(90deg) translateZ(30px);
+		-ms-transform: rotateX(90deg) translateZ(30px);
+		-o-transform: rotateX(90deg) translateZ(30px);
+	}
+	.f5 {
+		background: #86bfba;
+		-moz-transform: rotateX(-90deg) translateZ(30px);
+		-webkit-transform: rotateX(-90deg) translateZ(30px);
+		-ms-transform: rotateX(-90deg) translateZ(30px);
+		-o-transform: rotateX(-90deg) translateZ(30px);
+	}
+</style>
+</head>
+<body>
+
+<div id="main">
+
+<h1>ʀoToᴙ.js</h1>
+<h2>rotate3d manipulation library - lightweight and extensible</h2>
+
+<div id="c0" class="cube">
+	<div class="face f0"></div>
+	<div class="face f1"></div>
+	<div class="face f2"></div>
+	<div class="face f3"></div>
+	<div class="face f4"></div>
+	<div class="face f5"></div>
+</div>
+
+<div id="c1" class="cube">
+	<div class="face f0"></div>
+	<div class="face f1"></div>
+	<div class="face f2"></div>
+	<div class="face f3"></div>
+	<div class="face f4"></div>
+	<div class="face f5"></div>
+</div>
+
+<div id="c2" class="cube">
+	<div class="face f0"></div>
+	<div class="face f1"></div>
+	<div class="face f2"></div>
+	<div class="face f3"></div>
+	<div class="face f4"></div>
+	<div class="face f5"></div>
+</div>
+
+<div id="c3" class="cube">
+	<div class="face f0"></div>
+	<div class="face f1"></div>
+	<div class="face f2"></div>
+	<div class="face f3"></div>
+	<div class="face f4"></div>
+	<div class="face f5"></div>
+</div>
+
+<ul id="menu">
+	<li><a href="http://github.com/louisremi/rotor.js/#readme">Documentation</a></li>
+	<li><a href="http://github.com/louisremi/rotor.js/downloads">Download</a></li>
+	<li><a href="http://github.com/louisremi/rotor.js/">Fork me on Github</a></li>
+	<li>by <a href="http://twitter.com/louis_remi">@Louis_remi</a></li>
+</ul>
+
+</div>
+
+<script src="../rotor.js"></script>
+<script>
+	var r0 = rotor( $("c0") );
+	r0.rotation({x:1,y:1,z:0,a:Math.PI/4});
+	var r1 = rotor( $("c1") );
+	r1.rotation({x:0,y:1,z:1,a:Math.PI/4});
+	var r2 = rotor( $("c2") );
+	r2.rotation({x:1,y:0,z:1,a:Math.PI/4});
+	var r3 = rotor( $("c3") );
+	r3.rotation({x:1,y:1,z:0,a:-Math.PI/3});
+
+	function $(i){return document.getElementById(i)}
+</script>
+</body>
+</html>
