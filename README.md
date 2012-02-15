@@ -41,7 +41,7 @@ rtr.rotation({
 rtr.rotation();
 ```
 
-<pre>.on()</pre> / <pre>.off()</pre>
+<pre>.on() / .off()</pre>
 ------------------
 
 Enable/Disable manipulation of a rotor instance
