@@ -14,7 +14,7 @@ Main Features
 API
 ===
 
-`rotor( elem, [options] )`
+<pre>rotor( elem, [options] )</pre>
 --------------------------
 
 Rotor constructor: enables manipulation of `elem` on three rotation axis.
@@ -24,7 +24,7 @@ The only option currently availbale is inertia, which is on by default.
 // create a new rotor instance and disable inertia
 rtr = rotor( elem, { inertia: false } );
 
-`.rotation( [axisAngle] )`
+<pre>.rotation( [axisAngle] )</pre>
 --------------------------
 
 Rotation getter/setter: modify or access the current rotation of a rotor instance
@@ -41,7 +41,7 @@ rtr.rotation({
 rtr.rotation();
 ```
 
-`.on()` / `.off()`
+<pre>.on()</pre> / <pre>.off()</pre>
 ------------------
 
 Enable/Disable manipulation of a rotor instance
@@ -53,7 +53,7 @@ rtr.off();
 rtr.on();
 ```
 
-`rotor.aaProd( axisAngle0, axisAngle1 )`
+<pre>rotor.aaProd( axisAngle0, axisAngle1 )</pre>
 ----------------------------------------
 
 Combine two rotations by calculating the product of two axis-angles
@@ -64,9 +64,9 @@ Combine two rotations by calculating the product of two axis-angles
 var currentRotation = rtr.rotation(),
 	zRotation = {
 		x: 0,
-    y: 0,
-    z: 1,
-    a: Math.PI / 2
+		y: 0,
+		z: 1,
+		a: Math.PI / 2
 	},
 	newRotation = rotor.aaProd( currentRotation, zRotation );
 
