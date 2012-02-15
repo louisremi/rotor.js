@@ -4,7 +4,7 @@
 `rotate3d` manipulation library
 
 Main Features
--------------
+=============
 
 - enables manipulation of DOM nodes on three rotation axis, as if it was wrapped in a virtual trackball
 - set and get current rotation of rotor enabled nodes
@@ -12,16 +12,20 @@ Main Features
 - built with extensibility in mind (event helpers and geometry utils included)
 
 API
----
+===
 
-**`rotor( elem, [options] )`**
+`rotor( elem, [options] )`
+--------------------------
+
 Rotor constructor: enables manipulation of `elem` on three rotation axis.
 The only option currently availbale is inertia, which is on by default.
 
     // create a new rotor instance and disable inertia
     rtr = rotor( elem, { inertia: false } );
 
-**`.rotation( [axisAngle] )`**
+`.rotation( [axisAngle] )`
+--------------------------
+
 Rotation getter/setter: modify or access the current rotation of a rotor instance
 
     // setter
@@ -34,7 +38,9 @@ Rotation getter/setter: modify or access the current rotation of a rotor instanc
     // getter
     rtr.rotation();
 
-**`.on()` / `.off()`**
+`.on()` / `.off()`
+------------------
+
 Enable/Disable manipulation of a rotor instance
 
     // disable
@@ -42,7 +48,9 @@ Enable/Disable manipulation of a rotor instance
     // re-enable
     rtr.on();
 
-**`rotor.aaProd( axisAngle0, axisAngle1 )`**
+`rotor.aaProd( axisAngle0, axisAngle1 )`
+----------------------------------------
+
 Combine two rotations by calculating the product of two axis-angles
 
     // Rotate a DOM node by 90deg on the Z axis,
@@ -59,12 +67,15 @@ Combine two rotations by calculating the product of two axis-angles
     rtr.rotation( newRotation );
 
 More
-----
+====
+
 rotor.js is easy to extend using its event helpers and geometry utils, see the wiki.
 
 Credits & License
------------------
+=================
 
 Inspired from [traqball.js](http://github.com/dirkweber/traqball.js) by dirkweber
+
 Geometry algos adapted from [euclideanspace.com](http://euclideanspace.com/maths/geometry/rotations/conversions/)
+
 MIT Licensed http://louisremi.mit-license.org/
