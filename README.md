@@ -3,12 +3,17 @@
 
 `rotate3d` manipulation library
 
+Demo
+----
+
+Here is a simple [demo](http://louisremi.github.com/rotor.js/demo/).
+
 Main Features
 -------------
 
 - enables manipulation of DOM nodes on three rotation axis, as if it was wrapped in a virtual trackball
 - set and get current rotation of rotor enabled nodes
-- lightweight and clean code base
+- lightweight (2.4k minified / 1.3k gzipped) and clean code base
 - built with extensibility in mind (event helpers and geometry utils included)
 
 API
