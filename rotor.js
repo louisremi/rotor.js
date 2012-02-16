@@ -126,7 +126,7 @@ function Rotor( elem, options ) {
 					self.rotation( aaLast );
 
 					// loop as long as the movement is significant enough
-					Math.abs( daAnim ) > .01 && raf( anim );
+					( Math.abs( daAnim ) > .01 ) && raf( anim );
 				});
 			}
 
@@ -203,13 +203,12 @@ rotor.aaCalc = function( start, move ) {
 				Math.sqrt( start.x * start.x + start.y * start.y + start.z * start.z ) *
 				Math.sqrt( move.x * move.x + move.y * move.y + move.z * move.z )
 			)
-		),
-		norm = Math.sqrt( x * x + y * y + z * z );
+		);
 
-	return norm ? {
-		x: x / norm,
-		y: y / norm,
-		z: z / norm,
+	return a ? {
+		x: x,
+		y: y,
+		z: z,
 		a: a
 	} : initialRotation;
 };
@@ -226,8 +225,9 @@ rotor.aaProd = function( aa0, aa1 ) {
 
 // axis-angle to quaternion
 function aa2q( aa ) {
-	var aaah = aa.a / 2,
-		s = Math.sin( aaah );
+	var norm = Math.sqrt( aa.x * aa.x + aa.y * aa.y + aa.z * aa.z ),
+		aaah = aa.a / 2,
+		s = Math.sin( aaah ) / norm;
 
 	return {
 		x: aa.x * s,
@@ -262,6 +262,7 @@ function q2aa( q ) {
 		y = q.y / s;
 		z = q.z / s;
 	}
+
 	return {
 		x: x,
 		y: y,
